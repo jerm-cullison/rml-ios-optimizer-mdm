@@ -1,0 +1,22 @@
+name: Bug report
+description: Something isn’t working
+labels: [bug]
+body:
+  - type: textarea
+    id: desc
+    attributes:
+      label: What happened?
+      description: Describe the issue and expected behavior
+  - type: input
+    id: ios
+    attributes:
+      label: iOS version (17.x/18.x)
+  - type: checkboxes
+    id: steps
+    attributes:
+      label: Which steps fail?
+      options:
+        - label: Airplane toggle
+        - label: Safari deep-link
+        - label: Reboot prompt / ShutDown link
+        - label: Docs mismatch
