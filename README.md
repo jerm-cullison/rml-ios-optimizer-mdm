@@ -1,5 +1,5 @@
 README.md
-# README.md (your pasted content)
+# README.md 
 cat > README.md <<'EOF'
 # RML iOS Optimizer (MDM-friendly)
 Field-tested iPhone performance toolkit (iOS 17–18).  
