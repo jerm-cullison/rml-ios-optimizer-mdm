@@ -1,67 +1,85 @@
-README.md
-# README.md 
-cat > README.md <<'EOF'
-# RML iOS Optimizer (MDM-friendly)
-Field-tested iPhone performance toolkit (iOS 17–18).  
-**Includes:** hard-reset sequences, verified optimization practices, and a tap-to-run Shortcuts recipe.
+RML iOS Optimizer (MDM-friendly)
 
-[![Docs](https://img.shields.io/badge/docs-OPTIMIZATION.md-informational)](docs/OPTIMIZATION.md)
-[![Hard Reset Guide](https://img.shields.io/badge/guide-HARD__RESET.md-blue)](docs/HARD_RESET.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+Field-tested iPhone performance toolkit (iOS 17–18).
+Includes: hard-reset sequences, verified optimization practices, and a tap-to-run Shortcuts recipe.
 
----
 
-## Quickstart
 
-1. **Create the Shortcut on iPhone (iOS 17/18)**
-   - Open **Shortcuts** → **+** → name it **Optimize iPhone**.
-   - Add actions:
-     1) **Set Airplane Mode** → On  
-     2) **Wait** → 2 seconds  
-     3) **Set Airplane Mode** → Off  
-     4) **Show Alert** → “You’ll be taken to Safari settings. Tap ‘Clear History and Website Data’, then return.”  
-     5) **Open URL** →  
-        - iOS 17: `prefs:root=SAFARI&path=CLEAR_HISTORY_AND_DATA`  
-        - iOS 18: `prefs:root=SAFARI&path=CLEAR_HISTORY_AND_DATA/CLEAR_HISTORY/ALL_HISTORY`
-     6) **Choose from Menu** → “Reboot now?”  
-        - **Yes:** Show force-restart steps; (optional) **Open URL** `App-Prefs:root=General&path=ShutDown`  
-        - **No:** Show Notification “Optimization complete.”
 
-2. **Test**
-   - Confirm airplane toggles, Safari settings page opens, you can clear data, and reboot prompt appears.
 
-3. **Export & Add to Repo**
-   - In Shortcuts: long-press tile → **Share** → **Share as File** → save `.shortcut`.
-   - Add it to `/shortcuts/Optimize_iPhone_iOS17-18_v1.shortcut`.
 
-4. **(Optional) MDM Distribution**
-   - Host the `.shortcut` via Release asset or iCloud share link.
-   - Distribute as a managed link (web clip) with install instructions.
+Quickstart
 
----
+Create the Shortcut on iPhone (iOS 17/18)
 
-## What’s Inside
+Open Shortcuts → + → name it Optimize iPhone.
 
-- `docs/HARD_RESET.md` — model-by-model force-restart sequences (iPhone 8 → 15 Pro Max).
-- `docs/OPTIMIZATION.md` — 2025 verified practices (storage, RAM, background, Spotlight, thermal, network).
-- `shortcuts/` — place exported `.shortcut` here.
-- `LICENSE` — MIT.
+Add actions:
 
-> Note: Shortcuts cannot clear Safari history automatically. The Shortcut opens the Settings page; user taps **Clear History and Website Data**.
+Set Airplane Mode → On
 
-## Support / Issues
+Wait → 2 seconds
 
-- Use **Discussions** for Q&A.
-- Use **Issues** for bugs/requests (templates included).
+Set Airplane Mode → Off
 
-## License
+Show Alert → “You’ll be taken to Safari settings. Tap ‘Clear History and Website Data’, then return.”
+
+Open URL →
+
+iOS 17: prefs:root=SAFARI&path=CLEAR_HISTORY_AND_DATA
+
+iOS 18: prefs:root=SAFARI&path=CLEAR_HISTORY_AND_DATA/CLEAR_HISTORY/ALL_HISTORY
+
+Choose from Menu → “Reboot now?”
+
+Yes: Show force-restart steps; (optional) Open URL App-Prefs:root=General&path=ShutDown
+
+No: Show Notification “Optimization complete.”
+
+Test
+
+Confirm airplane toggles, Safari settings page opens, you can clear data, and reboot prompt appears.
+
+Export & Add to Repo
+
+In Shortcuts: long-press tile → Share → Share as File → save .shortcut.
+
+Add it to /shortcuts/Optimize_iPhone_iOS17-18_v1.shortcut.
+
+(Optional) MDM Distribution
+
+Host the .shortcut via Release asset or iCloud share link.
+
+Distribute as a managed link (web clip) with install instructions.
+
+What’s Inside
+
+docs/HARD_RESET.md — model-by-model force-restart sequences (iPhone 8 → 15 Pro Max).
+
+docs/OPTIMIZATION.md — 2025 verified practices (storage, RAM, background, Spotlight, thermal, network).
+
+shortcuts/ — place exported .shortcut here.
+
+LICENSE — MIT.
+
+Note: Shortcuts cannot clear Safari history automatically. The Shortcut opens the Settings page; user taps Clear History and Website Data.
+
+Support / Issues
+
+Use Discussions for Q&A.
+
+Use Issues for bugs/requests (templates included).
+
+License
 
 MIT © Rocky Mountain Logic
-EOF
 
-# .github/CONTRIBUTING.md
-mkdir -p .github
-cat > .github/CONTRIBUTING.md <<'EOF'
+Next files (same idea—no wrappers)
+
+Create these via Add file → Create new file, each on its own branch/PR:
+
+.github/CONTRIBUTING.md
+
 # Contributing
 
 ## Workflow
@@ -83,10 +101,10 @@ cat > .github/CONTRIBUTING.md <<'EOF'
 
 ## Security/Privacy
 - No data collection. No auto-execution beyond user-approved toggles.
-EOF
 
-# PR template
-cat > .github/PULL_REQUEST_TEMPLATE.md <<'EOF'
+
+.github/PULL_REQUEST_TEMPLATE.md
+
 ## Summary
 - What changed and why?
 
@@ -101,10 +119,10 @@ cat > .github/PULL_REQUEST_TEMPLATE.md <<'EOF'
 - [ ] Docs updated
 
 ## Screenshots / Notes
-EOF
 
-# Issue templates
-cat > .github/ISSUE_TEMPLATE/bug_report.yml <<'EOF'
+
+.github/ISSUE_TEMPLATE/bug_report.yml
+
 name: Bug report
 description: Something isn’t working
 labels: [bug]
@@ -127,4 +145,3 @@ body:
         - label: Safari deep-link
         - label: Reboot prompt / ShutDown link
         - label: Docs mismatch
-EOF
